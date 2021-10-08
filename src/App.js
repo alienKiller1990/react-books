@@ -1,8 +1,10 @@
 import axios from 'axios';
 import React from 'react'
 import { connect } from 'react-redux';
+import Menu from './components/Menu';
 import { setBooks } from './actions/books';
-import { Menu } from 'semantic-ui-react'
+import { Container } from 'semantic-ui-react';
+import BookCard from './components/BookCard';
 
 class App extends React.Component {
 
@@ -16,48 +18,18 @@ class App extends React.Component {
   render() {
     const { books, isReady } = this.props
     return (
-      <>
-        <Menu>
-          <Menu.Item
-            name='browse'
-            onClick={this.handleItemClick}
-          >
-            Browse
-          </Menu.Item>
-
-          <Menu.Item
-            name='submit'
-            onClick={this.handleItemClick}
-          >
-            Submit
-          </Menu.Item>
-
-          <Menu.Menu position='right'>
-            <Menu.Item
-              name='signup'
-              onClick={this.handleItemClick}
-            >
-              Sign Up
-            </Menu.Item>
-
-            <Menu.Item
-              name='help'
-              onClick={this.handleItemClick}
-            >
-              Help
-            </Menu.Item>
-          </Menu.Menu>
-        </Menu>
+      <Container>
+        <Menu />
         <ul>
           {
             !isReady
               ? 'Загрузка..'
               : books.map(book => (
-                <li><b>{book.title}</b> - {book.author}</li>
+                <BookCard {...book}/>
               ))
           }
         </ul>
-      </>
+      </Container>
     )
   }
 }
