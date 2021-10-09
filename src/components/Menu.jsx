@@ -1,7 +1,7 @@
 import { Menu } from 'semantic-ui-react'
 import React from 'react'
 
-function MenuComponent() {
+const MenuComponent = () => {
     return (
         <Menu>
             <Menu.Item
@@ -16,7 +16,7 @@ function MenuComponent() {
                     name='signup'
                     // onClick={this.handleItemClick}
                 >
-                    Итого: &nbsp; <b>0</b> руб.
+                    Итого: &nbsp; <b>0</b>&nbsp; руб.
                 </Menu.Item>
 
                 <Menu.Item
