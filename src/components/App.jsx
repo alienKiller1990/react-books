@@ -19,7 +19,7 @@ class App extends React.Component {
       <Container>
 
         <Menu />
-        <Filter/>
+        <Filter />
         <Card.Group itemsPerRow={4}>
           {!isReady
             ? 'Загрузка..'

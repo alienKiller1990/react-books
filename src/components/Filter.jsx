@@ -1,49 +1,36 @@
-import React, { Component } from 'react'
-import { Input, Menu } from 'semantic-ui-react'
+import React from 'react'
+import { Menu } from 'semantic-ui-react'
 
-class Filter extends Component {
-    state = { activeItem: 'home' }
+const Filter = ({ setFilter, filterBy }) => {
+    return (
+        <Menu secondary>
+            <Menu.Item
+                active={activeItem === 'all'}
+                onClick={setFilter.bind(this, 'all')}>
+                Все
+            </Menu.Item>
+            <Menu.Item
+                active={activeItem === 'popular'}
+                onClick={setFilter.bind(this, 'popular')}
+            />
+            <Menu.Item
+                active={activeItem === 'price_high'}
+                onClick={setFilter.bind(this, 'price_high')}>
+                Популярные
+            </Menu.Item>
+            <Menu.Item
+                active={activeItem === 'price_low'}
+                onClick={setFilter.bind(this, 'price_low')}>
+                Цена(Дешевые)
+            </Menu.Item>
+            <Menu.Item
+                active={activeItem === 'author'}
+                onClick={setFilter.bind(this, 'author')}>
+                Цена(Дорогие)
+            </Menu.Item>
 
-    handleItemClick = (e, { name }) => this.setState({ activeItem: name })
-
-    render() {
-        const { activeItem } = this.state
-
-        return (
-            <Menu secondary>
-                <Menu.Item
-                    name='all'
-                    active={activeItem === 'all'}
-                    onClick={this.handleItemClick}>
-                    Все
-                </Menu.Item>
-                <Menu.Item
-                    name='popular'
-                    active={activeItem === 'popular'}
-                    onClick={this.handleItemClick}
-                />
-                <Menu.Item
-                    name='price_high'
-                    active={activeItem === 'price_high'}
-                    onClick={this.handleItemClick}>
-                    Популярные
-                </Menu.Item>
-                <Menu.Item
-                    name='price_low'
-                    active={activeItem === 'price_low'}
-                    onClick={this.handleItemClick}>
-                    Цена(Дешевые)
-                </Menu.Item>
-                <Menu.Item
-                    name='author'
-                    active={activeItem === 'author'}
-                    onClick={this.handleItemClick}>
-                    Цена(Дорогие)
-                </Menu.Item>
-
-            </Menu>
-        )
-    }
+        </Menu>
+    )
 }
 
 export default Filter
