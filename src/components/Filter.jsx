@@ -5,28 +5,29 @@ const Filter = ({ setFilter, filterBy }) => {
     return (
         <Menu secondary>
             <Menu.Item
-                active={activeItem === 'all'}
+                active={filterBy === 'all'}
                 onClick={setFilter.bind(this, 'all')}>
                 Все
             </Menu.Item>
             <Menu.Item
-                active={activeItem === 'popular'}
-                onClick={setFilter.bind(this, 'popular')}
-            />
-            <Menu.Item
-                active={activeItem === 'price_high'}
-                onClick={setFilter.bind(this, 'price_high')}>
+                active={filterBy === 'popular'}
+                onClick={setFilter.bind(this, 'popular')}>
                 Популярные
             </Menu.Item>
             <Menu.Item
-                active={activeItem === 'price_low'}
+                active={filterBy === 'price_high'}
+                onClick={setFilter.bind(this, 'price_high')}>
+                Цена(Дорогие)
+            </Menu.Item>
+            <Menu.Item
+                active={filterBy === 'price_low'}
                 onClick={setFilter.bind(this, 'price_low')}>
                 Цена(Дешевые)
             </Menu.Item>
             <Menu.Item
-                active={activeItem === 'author'}
+                active={filterBy === 'author'}
                 onClick={setFilter.bind(this, 'author')}>
-                Цена(Дорогие)
+                Автор
             </Menu.Item>
 
         </Menu>
