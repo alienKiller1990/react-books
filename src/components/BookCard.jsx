@@ -1,7 +1,8 @@
 import React from 'react'
-import { Card, Icon, Image } from 'semantic-ui-react'
+import { Card, Icon, Image, Button } from 'semantic-ui-react'
 
-function BookCard( {title, author, price, image}) {
+function BookCard(book) {
+    const { title, author, price, image, addToCart, addedCount } = book;
     return (
         <Card>
             <Image src={image} />
@@ -18,6 +19,9 @@ function BookCard( {title, author, price, image}) {
                     {price}
                 </a>
             </Card.Content>
+            <Button onClick={addToCart.bind(this, book)}>
+                Добавить в корзину {addedCount > 0 && `(${addedCount})`}
+            </Button>
         </Card>
     )
 }
