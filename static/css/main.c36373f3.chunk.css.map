@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/index.css","webpack://src/app.css"],"names":[],"mappings":"AAAA,KAEE,QAAS,CACT,iBAAkB,CCFhB,eDGJ,CCAA,MACI,kBACJ","file":"main.c36373f3.chunk.css","sourcesContent":["body {\n  margin: 0;\n  margin: 0;\n  font-family: serif;\n}\n","body {\r\n    margin-top: 20px;\r\n}\r\n\r\n.menu{\r\n    margin-bottom: 20px;\r\n}"]}
